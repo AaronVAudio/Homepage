@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Example</title>
+        <style>
+            body {
+                background-color: lightslategrey;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+                transition: color;
+                transition-duration: 5s;
+            }
+            a:hover {
+                color: blue;
+            }
+            h1 {
+                font-size: 12pt;
+                transition: font-size;
+                transition-duration: 10s;
+            }
+            h1:hover {
+                font-size: 72pt;
+            }
+
+            .card {
+                width: 150px;
+                height: 50px;
+                position: relative;
+                display: inline-block;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+            }
+            .card .img-top {
+                display: inline;
+                opacity: 0%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+                transition: opacity;
+                transition-duration: 5s;
+            }
+            .card .img-bottom {
+                opacity: 100%;
+                transition: opacity;
+                transition-duration: 5s;
+            }
+            .card:hover .img-bottom {
+                opacity: 0%;
+            }
+            .card:hover .img-top {
+                opacity: 100%;
+            }
+            .wordblock {
+                width: 400px;
+            }
+            .one, .two, .three {
+                display: inline;
+                margin: none;
+                padding: none;
+            }
+            @keyframes fadered {
+                from {
+                    color: black;
+                }
+                to {
+                    color: red;
+                }
+            }
+            @keyframes fadegrey {
+                from {
+                    opacity: 100%;
+                    color: black;
+                    text-shadow: none;
+                }
+                to {
+                    opacity: 50%;
+                    color: #444444;
+                    text-shadow: 0px 0px 5px black;
+                }
+            }
+            .two {
+                animation: fadered 10s forwards;
+            }
+            .one, .three {
+                animation: fadegrey 10s forwards;
+            }
+        </style>
+    </head>
+    <body>
+        <p>This is some <a href="index.html">example</a> text.</p>
+        <h1>Test Word</h1>
+        <div class="card">
+            <img src="images/example.png" onContextMenu="return false;" class="img-bottom" alt="Card Back">
+            <a href="index.html"><img src="images/examplebroken.png" onContextMenu="return false;" class="img-top" alt="Card Front"></a>
+        </div>
+        <div class="wordblock">
+            <p class="one">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p><p class="two">veniam,</p><p class="three"> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </body>
+</html>

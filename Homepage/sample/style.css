@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+body {
+  margin-top: 20%;
+  margin-left: 20%;
+  background-color: lightblue;
+  font-family: 'Syne Mono', monospace;
+  color: orange;
+  text-shadow: 1px 1px grey;
+}
+
+button {
+  box-shadow: 1px 1px grey;
+}
+
+textarea {
+  box-shadow: 1px 1px grey;
+}

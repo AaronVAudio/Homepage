@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="cipher.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+        <link href="cipher.css" rel="stylesheet" media="all">
+        <title>Cipher Site</title>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1>Cipher Site</h1>
+            </header>
+            <section>
+                <p>Input:</p>
+                <textarea id="inputArea"></textarea>
+                <p>Output:</p>
+                <textarea id="outputArea"></textarea>
+                <br><br>
+                <input type="submit" value="Swap Up" id="button" onclick="onSwap()">
+                <br><br>
+                <fieldset>
+                    <legend>Encode/Decode</legend>
+                    <input type="radio" name="encodedecode" value="encode">Encode</input>
+                    <br>
+                    <input type="radio" name="encodedecode" value="decode">Decode</input>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Cipher Type</legend>
+                    <input type="radio" name="cipher" value="binary">Binary</input>
+                    <br>
+                    <input type="radio" name="cipher" value="hexadecimal">Hexadecimal</input>
+                    <br>
+                    <input type="radio" name="cipher" value="caesar">Caesar</input>
+                    <br>
+                </fieldset>
+                <br>
+                <fieldset id="caesar">
+                    <legend>Caesar Cipher Parameters</legend>
+                    <p>Replace:</p>
+                    <textarea id="caesarIn" maxlength="1"></textarea>
+                    <p>With:</p>
+                    <textarea id="caesarOut" maxlength="1"></textarea>
+                </fieldset>
+                <br>
+                <input type="submit" value="Submit" id="button" onclick="decode()">
+            </section>
+            <footer>
+                <p>&copy; Copyright 2021 <a href="mailto:aaronvaudio@gmail.com">Aaron VanDuynhoven</a></p>
+            </footer>
+        </div>
+    </body>
+</html>
