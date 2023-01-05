@@ -101,4 +101,24 @@ footer a:hover {
   #wrap {
     width: 100%;
   }
+
+  img {
+    width: 97%;
+  }
+
+  video {
+    width: 97%;
+  }
+
+  p {
+    width: 97%;
+  }
+
+  ul {
+    width: 97%;
+  }
+
+  li {
+    padding-bottom: 2%;
+  }
 }
