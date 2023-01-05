@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <title>playContr0l</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="cipher.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <div id="wrap">
+        <div id="content">
+            <h1>playContr0l</h1>
+            <h3><a href="../projects.html" target="_self"><< return home</a></h3>
+            <h2>About</h2>
+            <p>A Teensy-based sample player and MIDI controller footswitch for live use with <a href="http://www.facebook.com/Terrorhorseofficial" target="_blank">Terrorhorse</a>.</p>
+            <h2>Parts:</h2>
+            <ul>
+                <li><a href="https://www.mouser.ca/ProductDetail/546-1456PH1BKBU" target="_blank">>> Hammond 1456PH1BKBU</a></li>
+                <li><a href="https://www.mouser.ca/ProductDetail/619-350-00027" target="_blank">>> Parallax 350-00027 - 7-segment display</a></li>
+                <li><a href="https://www.mouser.ca/ProductDetail/594-MBB02070C4707JRP" target="_blank">>> .47ohms resistors</a></li>
+                <li><a href="https://www.mouser.ca/ProductDetail/71-CPF1220R00FKE36" target="_blank">>> 220ohms resistors</a></li>
+                <li><a href="https://www.mouser.ca/ProductDetail/502-57GB5FX" target="_blank">>> Switchcraft 57GB5FX - 5-pin DIN</a></li>
+                <li><a href="https://www.mouser.ca/ProductDetail/550-12202" target="_blank">>> Neutrik 1/4" Jacks</a></li>
+                <li><a href="https://www.mouser.ca/ProductDetail/854-PAD1" target="_blank">>> PCB Breadboard</a></li>
+                <li><a href="https://www.amazon.ca/gp/product/B073K14CVB/" target="_blank">>> SanDisk 16GB Ultra microSDHC</a></li>
+                <li><a href="https://www.amazon.ca/gp/product/B08TWSV2DY/" target="_blank">>> Multicolored Dupont Wires</a></li>
+                <li><a href="https://www.amazon.ca/gp/product/B077P1BFX9/" target="_blank">>> Etopars Momentary Footswitch</a></li>
+                <li><a href="https://www.amazon.ca/gp/product/B07G4XYJ5W/" target="_blank">>> CERRXIAN Micro USB 5pin Male to USB Type B Female Extension Panel Mount</a></li>
+                <li><a href="https://www.pjrc.com/store/teensy40.html" target="_blank">>> Teensy 4.0</a></li>
+                <li><a href="https://www.pjrc.com/store/teensy3_audio.html" target="_blank">>> Audio Adaptor Board for Teensy 4.x</a></li>
+                <li><a href="https://www.pjrc.com/store/header_14x1.html" target="_blank">>> Header Pins</a></li>
+                <li><a href="https://www.pjrc.com/store/header_14x1_d.html" target="_blank">>> Double Insulator Header Pins</a></li>
+                <li><a href="https://www.pjrc.com/store/socket_14x1.html" target="_blank">>> Sockets</a></li>
+            </ul>
+            <a href="https://github.com/AaronVAudio/Arduino/blob/main/MIDISampler.ino" target="_blank"><h2>>> Code</h2></a>
+            <h2>Build</h2>
+            <img src="images/step1.jpg" width="800"/>
+            <br>
+            <img src="images/step2.jpg" width="800"/>
+            <br>
+            <p>The first step, of course, was drilling out the case for all the hardware. A block of acrylic was used to hold the 7-segment display and breadboard in place. All the hardware was mounted before wiring began.</p>
+            <img src="images/step3.jpg" width="800"/>
+            <br>
+            <p>The double insulator header pins were soldered to both the Teensy 4.0 and the Audio Adaptor Board. Sockets and header pins were soldered to the breadboard to break out the pins and create a common ground.</p>
+            <img src="images/step4.jpg" width="800"/>
+            <br>
+            <a href="https://www.pjrc.com/teensy/td_libs_MIDI.html" target="_blank"><img src="images/MIDI.png" width="800"/></a>
+            <br>
+            <p>Wires were soldered to the footswitches to create a 3x3 button matrix. Output wires were soldered to 1/4" audio jacks. Wires were soldered to the 5-pin DIN, with .47ohm resistors soldered inline.</p>
+            <img src="images/step5.png" width="800"/>
+            <br>
+            <p>Wires were soldered to the 7-segment display with 220ohm resistors soldered inline on the hot pins.</p>
+            <video width="800" height="600" controls>
+                <source src="videos/step6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <p>At this point, physical assembly was complete, and programming began. My first tests were to code the 7-segment display with each number, creating a simple counting loop to get comfortable with the platform.</p>
+            <video width="800" height="600" controls>
+                <source src="videos/step7.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <p>My next step in programming was getting the button matrix working, seen here being tested by changing the 7-segment display to show the number of the footswitch.</p>
+            <video width="800" height="600" controls>
+                <source src="videos/step8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <p>At this point, the majority of the sampler functionality was programmed and operating correctly. However, I was having an issue with noise, and it only worked when connected to my laptop and mixer, not under separate power.</p>
+            <video width="800" height="600" controls>
+                <source src="videos/step9.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <p>I moved on to implementing MIDI and quickly had it controlling my effects on/off on my Line6 HD500.</p>
+            <img src="images/step10.jpg" width="800"/>
+            <br>
+            <p>I determined the noise was likely a ground issue, so I opened the pedal and tested my continuity with a multimeter. I found that there was a bad solder point on the ground connection between the Teensy and the Audio Board, which is why it only worked when connected to both the laptop and the mixer (which is also connected to the laptop), as it was grounding the audio shield from the audio outputs, and the Teensy through the USB. Touching up the solder point fixed the problem completely, and the pedal was ready to be installed in my pedalboard, complete with my new Line6 HX Stomp XL.</p>
+            <video width="800" height="600" controls>
+                <source src="videos/step11.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <p>After using it at band practices and writing sessions, I found a place in a song where I wanted to turn on an octave effect and trigger a sample at the same time, so I assigned both functions to a button on the appropriate bank for the setlist.</p>
+            <img src="images/finished.jpg" width="800"/>
+            <p>Finally gig ready and set up with all the samples and patches needed for our first gig, I finished the cosmetic touches with simple labels, and a piece of translucent adhesive plastic for over the display.</p>
+            <h2>Future Ideas</h2>
+            <p>Possible panel mount SD card slot, or coding based alternative to prevent needing to open the case to update samples.</p>
+            <br>
+            <p>Possible external trigger input.</p>
+            <br>
+            <p>Possible DMX lighting controller output implementation.</p>
+            <footer>
+                <p>&copy; Copyright 2021 <a href="mailto:aaronvaudio@gmail.com">Aaron VanDuynhoven</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
