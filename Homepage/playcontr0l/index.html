@@ -53,37 +53,22 @@
             <img src="images/step5.png" width="800"/>
             <br>
             <p>Wires were soldered to the 7-segment display with 220ohm resistors soldered inline on the hot pins.</p>
-            <video width="800" height="600" controls>
-                <source src="videos/step6.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="800" height="600" src="https://www.youtube.com/embed/H7E0TlBvdks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br>
             <p>At this point, physical assembly was complete, and programming began. My first tests were to code the 7-segment display with each number, creating a simple counting loop to get comfortable with the platform.</p>
-            <video width="800" height="600" controls>
-                <source src="videos/step7.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="800" height="600" src="https://www.youtube.com/embed/efJ1yqW6eUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br>
             <p>My next step in programming was getting the button matrix working, seen here being tested by changing the 7-segment display to show the number of the footswitch.</p>
-            <video width="800" height="600" controls>
-                <source src="videos/step8.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="800" height="600" src="https://www.youtube.com/embed/gjXm4fe3XSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br>
             <p>At this point, the majority of the sampler functionality was programmed and operating correctly. However, I was having an issue with noise, and it only worked when connected to my laptop and mixer, not under separate power.</p>
-            <video width="800" height="600" controls>
-                <source src="videos/step9.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="800" height="600" src="https://www.youtube.com/embed/G8nkzvMGOG8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br>
             <p>I moved on to implementing MIDI and quickly had it controlling my effects on/off on my Line6 HD500.</p>
             <img src="images/step10.jpg" width="800"/>
             <br>
             <p>I determined the noise was likely a ground issue, so I opened the pedal and tested my continuity with a multimeter. I found that there was a bad solder point on the ground connection between the Teensy and the Audio Board, which is why it only worked when connected to both the laptop and the mixer (which is also connected to the laptop), as it was grounding the audio shield from the audio outputs, and the Teensy through the USB. Touching up the solder point fixed the problem completely, and the pedal was ready to be installed in my pedalboard, complete with my new Line6 HX Stomp XL.</p>
-            <video width="800" height="600" controls>
-                <source src="videos/step11.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="800" height="600" src="https://www.youtube.com/embed/Wd8bMpWq0Tw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br>
             <p>After using it at band practices and writing sessions, I found a place in a song where I wanted to turn on an octave effect and trigger a sample at the same time, so I assigned both functions to a button on the appropriate bank for the setlist.</p>
             <img src="images/finished.jpg" width="800"/>
@@ -97,6 +82,6 @@
         </div>
         <footer>
             <p>&copy; Copyright 2021 <a href="mailto:aaronvaudio@gmail.com">Aaron VanDuynhoven</a></p>
-        </footer>    
+        </footer>
     </div>
 </body>
