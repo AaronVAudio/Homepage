@@ -1,0 +1,28 @@
+body {
+    background-color: lightblue;
+    transition: background-color;
+    transition-duration: 10s;
+}
+textarea {
+    font-family: "VT323", monospace, sans-serif;
+    font-size: 16pt;
+    margin-top: 10%;
+    margin-left: 42%;
+    box-shadow: 1px 1px grey;
+}
+button {
+    font-family: "VT323", monospace, sans-serif;
+    font-size: 16pt;
+    margin-left: 42%;
+    box-shadow: 1px 1px grey;
+}
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+h1 {
+    font-family: "VT323", monospace, sans-serif;
+    font-size: 42pt;
+    margin-left: 42%;
+    text-shadow: 2px 2px darkslategrey;
+    color: darkorange;
+    -webkit-text-stroke-width: 0.001px;
+    -webkit-text-stroke-color: red;
+}

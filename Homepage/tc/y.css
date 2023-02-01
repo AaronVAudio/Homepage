@@ -1,0 +1,22 @@
+body {
+    font-family: 'Unbounded', cursive;
+    display: block;
+    background: yellow;
+}
+#thing {
+    margin-left: 48%;
+    margin-top: 1%;
+    transition: color, margin-top;
+    transition-duration: 10s;
+}
+#thing:hover {
+    margin-top: 100%;
+}
+#butt {
+    display: block;
+    margin-left: 47.75%;
+}
+#go {
+    display: none;
+    margin-left: 48%;
+}

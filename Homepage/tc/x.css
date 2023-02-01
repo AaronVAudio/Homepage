@@ -1,0 +1,11 @@
+.bolded {
+    font-weight: bold;
+}
+#main {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+}
+body {
+    background: lightgreen;
+}
