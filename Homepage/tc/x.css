@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 .bolded {
-    font-weight: bold;
+font-weight: bold;
 }
 #main {
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
+margin-top: 5%;
 }
 body {
-    background: lightgreen;
+font-family: 'MedievalSharp', cursive;
+background: lightgreen;
+}
+button {
+font-family: 'MedievalSharp', cursive;
+background: grey;
 }
