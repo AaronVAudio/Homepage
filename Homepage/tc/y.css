@@ -9,9 +9,6 @@ body {
     transition: color, margin-top;
     transition-duration: 10s;
 }
-#thing:hover {
-    margin-top: 100%;
-}
 #butt {
     display: block;
     margin-left: 47.75%;

@@ -12,8 +12,8 @@
     <body>
         <div id="main">
             <button onclick="window.open('./x.html', '_self');" id="go">Go</button>
-            <p id="thing" style="color: yellow;">poo</p>
-            <button onclick="myClick()" id="butt">Click</button>
+            <p id="thing" style="color: yellow;" onclick="myClick(this.id)">poo</p>
+            <button onclick="myClick(this.id)" id="butt">Click</button>
         </div>
     </body>
 </html>
