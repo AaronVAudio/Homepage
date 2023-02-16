@@ -1,4 +1,12 @@
 var page = "1";
+var user = "";
+
+function myLoad() {
+    user = sessionStorage.getItem("name");
+    if (user === null) {
+        user = "Come";
+    }
+}
 
 function onClick(button) {
     if (page === "1") {
@@ -41,7 +49,7 @@ function onClick(button) {
         }
     } else if (page === "3d") {
         if (button === "b1") {
-            document.getElementById("content").innerHTML = "You take some popcorn, then continue on your way.<br>You enter the elevator room, press the button, and wait for the elevator.<br>You take the elevator down.<br>You hear something large moving outside the door.<br>The door opens, and you slowly step outside.<br>You hear a roar.<br><br><span class='bolded'You have awakened The Creature.</span>";
+            document.getElementById("content").innerHTML = "You take some popcorn, then continue on your way.<br>You enter the elevator room, press the button, and wait for the elevator.<br>You take the elevator down.<br>You hear something large moving outside the door.<br>The door opens, and you slowly step outside.<br>You hear a roar.<br>You hear a deep voice...<br><br>\""+user+"...\"<br><br>\""+user+"...\"<br><br><span class='bolded'You have awakened The Creature.</span>";
             document.getElementById("b1").innerHTML = "Run";
             document.getElementById("b2").innerHTML = "Throw The Popcorn";
             page = "4a";

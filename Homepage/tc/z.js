@@ -1,7 +1,8 @@
 function myClick() {
     var name=document.getElementById("name").value;
+    sessionStorage.setItem("name", name);
     if (name.toLowerCase()==="alicia") {
-        document.getElementById("output").innerHTML = "Ugh, you again.";
+        document.getElementById("output").innerHTML = "Oh, you found this one, too.";
         document.getElementById("output2").innerHTML = "";
         document.body.style.backgroundColour = "black";
     } else if (name==="") {
@@ -15,8 +16,8 @@ function myClick() {
 function myClick2() {
     var name=document.getElementById("name").value;
     if (document.getElementById("output").innerHTML === "THE" || document.getElementById("output").innerHTML === "") {
-    } else if (document.getElementById("output").innerHTML === "You know how this goes.") {
-        if (confirm("You're ok I guess.")) {
+    } else if (document.getElementById("output").innerHTML === "Well, keep going.") {
+        if (confirm("I'm actually glad you're here.")) {
             document.getElementById("output").innerHTML = "";
             document.getElementById("output2").innerHTML = "";
             open("y.html", "_self");
@@ -24,15 +25,15 @@ function myClick2() {
             document.getElementById("output").innerHTML = ":P";
             document.getElementById("output2").innerHTML = "";
         }
-    } else if (document.getElementById("output2").innerHTML === "You found everything.") {
-        if (confirm("Ok, one more.")) {
+    } else if (document.getElementById("output2").innerHTML === "to see.") {
+        if (!confirm("Continue?")) {
             document.getElementById("output").innerHTML = "THE";
             document.getElementById("output2").innerHTML = "END";
         } else {
             open("y.html", "_self");
         }
-    } else if (name.toLowerCase() === "alicia" && document.getElementById("output").innerHTML === "Ugh, you again.") {
-        document.getElementById("output2").innerHTML = "You came back.";
+    } else if (name.toLowerCase() === "alicia" && document.getElementById("output").innerHTML === "Oh, you found this one, too.") {
+        document.getElementById("output2").innerHTML = "I didn't expect you here.";
     } else if (name==="") {
     } else if (name.toLowerCase() !== "alicia") {
         document.getElementById("output2").innerHTML = "I've been expecting you.";
@@ -42,11 +43,11 @@ function myClick3() {
     var name=document.getElementById("name").value;
     if (document.getElementById("output").innerHTML === "THE" || document.getElementById("output").innerHTML === "") {
     } else if (name.toLowerCase()==="alicia") {
-        document.getElementById("output").innerHTML = "You know how this goes.";
+        document.getElementById("output").innerHTML = "Well, keep going.";
         document.getElementById("output2").innerHTML = "";
     } else if (name==="") {
     } else {
-        document.getElementById("output").innerHTML = "Very clever.";
-        document.getElementById("output2").innerHTML = "You found everything.";
+        document.getElementById("output").innerHTML = "There's so much more";
+        document.getElementById("output2").innerHTML = "to see.";
     }
 }
