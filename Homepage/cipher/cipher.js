@@ -1,3 +1,13 @@
+function loadPage() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if (urlParams.has("i")) {
+        document.getElementById("inputArea").value = urlParams.get("i");
+        document.getElementById("caesarIn").value = urlParams.get("r");
+        document.getElementById("caesarOut").value = urlParams.get("w");
+    }
+}
+
 function onSwap() {
     document.getElementById("inputArea").value = document.getElementById("outputArea").value;
     document.getElementById("outputArea").value = "";
@@ -199,4 +209,23 @@ function caesarEncode(input, cIn, cOut) {
 
 function caesarDecode(input, cIn, cOut) {
     return caesarEncode(input, cOut, cIn);
+}
+
+function share() {
+    var outputVal = encodeURIComponent(document.getElementById("outputArea").value.trim());
+    var replaceVal = document.getElementById("caesarIn").value;
+    var withVal = document.getElementById("caesarOut").value;
+
+    var shareURL = "https://avdev.ca/cipher/index.html?";
+    if (outputVal !== "") {
+        shareURL += "i=" + outputVal;
+    }
+    if (replaceVal !== "") {
+        shareURL += "&r=" + replaceVal;
+    }
+    if (withVal !== "") {
+        shareURL += "&w=" + withVal;
+    }
+    navigator.clipboard.writeText(shareURL);
+    alert("Copied URL");
 }

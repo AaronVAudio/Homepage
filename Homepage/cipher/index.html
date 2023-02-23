@@ -10,7 +10,7 @@
         <link href="cipher.css" rel="stylesheet" media="all">
         <title>Cipher Site</title>
     </head>
-    <body>
+    <body onload="loadPage()">
         <div id="wrap">
             <header>
                 <h1>Cipher Site</h1>
@@ -49,6 +49,8 @@
                 </fieldset>
                 <br>
                 <input type="submit" value="Submit" id="button" onclick="decode()">
+                <br>
+                <input type="submit" value="Share" id="shareButton" onclick="share()">
             </section>
             <footer>
                 <p>&copy; Copyright 2021 <a href="mailto:aaronvaudio@gmail.com">Aaron VanDuynhoven</a></p>
