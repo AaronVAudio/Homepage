@@ -29,7 +29,7 @@ body {
     padding: 0%;
     margin: 0%;
     transition: background;
-    transition-duration: 3s;
+    transition-duration: 1s;
 }
 button {
     font-family: 'MedievalSharp', cursive;
