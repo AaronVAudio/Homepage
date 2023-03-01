@@ -5,24 +5,38 @@ body {
 }
 textarea {
     font-family: "VT323", monospace, sans-serif;
+    display: block;
     font-size: 16pt;
     margin-top: 10%;
-    margin-left: 42%;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 1px 1px grey;
 }
 button {
     font-family: "VT323", monospace, sans-serif;
+    display: block;
     font-size: 16pt;
-    margin-left: 42%;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
     box-shadow: 1px 1px grey;
+}
+#textDiv {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 h1 {
     font-family: "VT323", monospace, sans-serif;
     font-size: 42pt;
-    margin-left: 42%;
     text-shadow: 2px 2px darkslategrey;
     color: darkorange;
     -webkit-text-stroke-width: 0.001px;
     -webkit-text-stroke-color: red;
+}
+@media screen and (max-width: 600px) {
+    #textDiv {
+        width: 100%;
+    }
 }
