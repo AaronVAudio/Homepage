@@ -1,24 +1,157 @@
 <!--the silliness continues-->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>This is a documenting of my steady mental decline</title>
-        <script type="text/javascript" src="z.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-        <link href="z.css" rel="stylesheet" media="all">
-    </head>
-    <body>
-        <div>
-            <textarea placeholder="Enter name..." id="name"></textarea>
-            <br></br>
-            <div id="textDiv">
-                <button onclick="myClick()" id="submit">Submit</button>
-                <h1 id="output" onclick="myClick2()"></h1>
-                <br></br>
-                <h1 id="output2" onclick="myClick3()"></h1>
-            </div>
-        </div>
-    </body>
+<html id="all">
+<head>
+<title>Welcome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<style>
+#container {
+position: absolute;
+width: 99%;
+margin: auto;
+padding: 0;
+}
+#all {
+box-shadow: inset 0 0 100px lightblue;
+transition: box-shadow;
+transition-duration: 3s;
+}
+#overlay {
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: url("./stars.jpg") center center fixed;
+background-size: cover;
+opacity: 0%;
+transition: opacity;
+transition-delay: 3s;
+transition-duration: 10s;
+z-index: 0;
+}
+#main {
+z-index: 1;
+}
+body {
+background-color: lightblue;
+transition: background-color;
+transition-duration: 3s;
+}
+textarea {
+font-family: "VT323", monospace, sans-serif;
+font-size: 16pt;
+background-color: white;
+margin-top: 10%;
+margin-left: 42%;
+box-shadow: 1px 1px grey;
+transition: background-color;
+transition-duration: 3s;
+z-index: 1;
+}
+button {
+font-family: "VT323", monospace, sans-serif;
+font-size: 16pt;
+background-color: lightgrey;
+margin-left: 42%;
+box-shadow: 1px 1px grey;
+transition: background-color;
+transition-duration: 3s;
+}
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+h1 {
+font-family: "VT323", monospace, sans-serif;
+font-size: 42pt;
+margin-left: 42%;
+margin-right: 10%;
+text-shadow: 2px 2px darkslategrey;
+color: darkorange;
+transition: color, text-shadow;
+transition-duration: 3s;
+}
+</style>
+</head>
+<body style="background-color: lightblue">
+<div id="overlay" style="opacity: 0;"></div>
+<div id="container">
+<div id="main">
+<textarea placeholder="Enter name..." id="name"></textarea>
+<br></br>
+<button onclick="myClick()" id="submit">Submit</button>
+<h1 id="output" onclick="myClick2()" style="color: darkorange"></h1>
+<br></br>
+<h1 id="output2" onclick="myClick3()" style="color: darkorange"></h1>
+</div>
+</div>
+<script>
+var a1 = "";
+var a2 = "";
+var a3 = "";
+var a4 = "";
+function myClick() {
+var name=document.getElementById("name").value;
+sessionStorage.setItem("name", name);
+if (name.toLowerCase()==="alicia") {
+document.getElementById("output").innerHTML = a1;
+document.getElementById("output2").innerHTML = "";
+//document.body.style.backgroundColor = "#0B0B45";
+document.body.style.backgroundColor = "white";
+document.getElementById("output").style.color = "#4f332a";
+document.getElementById("output2").style.color = "#4f332a";
+document.getElementById("output").style.textShadow = "2px 2px black";
+document.getElementById("output2").style.textShadow = "2px 2px black";
+document.getElementById("all").style.boxShadow = "inset 0 0 100px black"
+document.getElementById("submit").style.backgroundColor = "slategrey";
+document.getElementById("name").style.backgroundColor = "slategrey";
+document.getElementById("overlay").style.opacity = "50%";
+} else if (name==="") {
+document.getElementById("output").innerHTML = "Enter a name.";
+document.getElementById("output2").innerHTML = "";
+} else {
+document.getElementById("output").innerHTML = "Hello, " + name;
+document.getElementById("output2").innerHTML = "";
+}
+}
+function myClick2() {
+var name=document.getElementById("name").value;
+if (document.getElementById("output").innerHTML === "THE" || document.getElementById("output").innerHTML === "Good.") {
+} else if (document.getElementById("output").innerHTML === a3) {
+if (confirm(a4)) {
+document.getElementById("output").innerHTML = "";
+document.getElementById("output2").innerHTML = "";
+open("y.html", "_self");
+} else {
+document.getElementById("output").innerHTML = ":P";
+document.getElementById("output2").innerHTML = "";
+}
+} else if (document.getElementById("output2").innerHTML === "There is more to be found.") {
+if (!confirm("Continue?")) {
+document.getElementById("output").innerHTML = "THE";
+document.getElementById("output2").innerHTML = "END";
+} else {
+open("y.html", "_self");
+}
+} else if (name.toLowerCase() === "alicia" && document.getElementById("output").innerHTML === a1) {
+document.getElementById("output2").innerHTML = a2;
+} else if (name==="") {
+} else if (name.toLowerCase() !== "alicia") {
+document.getElementById("output2").innerHTML = "I've been expecting you.";
+}
+}
+function myClick3() {
+var name=document.getElementById("name").value;
+if (document.getElementById("output").innerHTML === "THE" || document.getElementById("output").innerHTML === "") {
+} else if (document.getElementById("output2").innerHTML===a2) {
+document.getElementById("output").innerHTML = a3;
+document.getElementById("output2").innerHTML = "";
+} else if (name==="") {
+} else {
+document.getElementById("output").innerHTML = "This is only the beginning.";
+document.getElementById("output2").innerHTML = "There is more to be found.";
+}
+}
+</script>
+</body>
 </html>

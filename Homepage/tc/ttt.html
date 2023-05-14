@@ -1,0 +1,167 @@
+<html>
+<head>
+<style>
+html {
+width: 100%;
+height: 100%;
+box-shadow: inset 0 0 100px black;
+}
+body {
+background: orange;
+color: black;
+transition: background, color;
+transition-duration: 0.5s;
+}
+#main {
+width: 540px;
+height: 600px;
+margin: auto;
+}
+#buttons {
+padding-top: 0;
+margin-top: 0;
+width: 540px;
+height: 540px;
+display: grid;
+grid-template-rows: repeat(3, 180px);
+grid-template-columns: repeat(3, 180px);
+}
+#new {
+font-family: sans-serif;
+width: 540px;
+height: 60px;
+background: lightblue;
+}
+#a1, #a2, #a3, #b1, #b2, #b3, #c1, #c2, #c3 {
+background: lightblue;
+font-family: sans-serif;
+font-size: 72;
+}
+h1 {
+font-family: sans-serif;
+text-align: center;
+padding: 0;
+margin: 0;
+}
+</style>
+<script>
+var turn = "X";
+var win = false;
+var turns = 0;
+cheat = false;
+
+function loadPage() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if (urlParams.has("cheat")) {
+        cheat = true;
+    }
+}
+
+function onClick(button) {
+var bgnum = Math.floor(Math.random()*16777215);
+var bg = bgnum.toString(16);
+var txt = (16777215 - bgnum).toString(16);
+document.body.style.backgroundColor = "#" + bg;
+document.body.style.color = "#" + txt;
+
+if (button === "new") {
+document.getElementById("a1").innerHTML = "";
+document.getElementById("b1").innerHTML = "";
+document.getElementById("c1").innerHTML = "";
+document.getElementById("a2").innerHTML = "";
+document.getElementById("b2").innerHTML = "";
+document.getElementById("c2").innerHTML = "";
+document.getElementById("a3").innerHTML = "";
+document.getElementById("b3").innerHTML = "";
+document.getElementById("c3").innerHTML = "";
+win = false;
+turn = "X";
+turns = 0;
+document.getElementById("status").innerHTML = turn;
+} else if (button === "status") {
+if (!cheat) {
+cheat = true;
+} else {
+cheat = false;
+}
+} else if (!win) {
+if (document.getElementById(button).innerHTML === "" || cheat) {
+if (cheat && document.getElementById(button).innerHTML ==="") {
+turns = turns + 1;
+}
+document.getElementById(button).innerHTML = turn;
+if (!cheat) {
+turns = turns + 1;
+}
+
+var a1 = document.getElementById("a1").innerHTML;
+var b1 = document.getElementById("b1").innerHTML;
+var c1 = document.getElementById("c1").innerHTML;
+var a2 = document.getElementById("a2").innerHTML;
+var b2 = document.getElementById("b2").innerHTML;
+var c2 = document.getElementById("c2").innerHTML;
+var a3 = document.getElementById("a3").innerHTML;
+var b3 = document.getElementById("b3").innerHTML;
+var c3 = document.getElementById("c3").innerHTML;
+
+if (a1 === b1 && a1 === c1 && a1 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (a2 === b2 && a2 === c2 && a2 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (a3 === b3 && a3 === c3 && a3 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (a1 === a2 && a2 === a3 && a1 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (b1 === b2 && b2 === b3 && b1 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (c1 === c2 && c1 === c3 && c1 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (a1 === b2 && a1 === c3 && a1 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (a3 === b2 && a3 === c1 && a3 !== "") {
+win = true;
+document.getElementById("status").innerHTML = turn + " WINS!";
+} else if (turns === 9) {
+if (!cheat) {
+win = true;
+}
+document.getElementById("status").innerHTML = "TIE!";
+} else {
+if (turn === "X") {
+turn = "O";
+} else {
+turn = "X";
+}
+document.getElementById("status").innerHTML = turn;
+}
+}
+}
+}
+</script>
+</head>
+<body onload="loadPage()">
+<div id="main">
+<h1 id="status" onclick="onClick(this.id)">X</h1>
+<div id="buttons">
+<button id="a1" onclick="onClick(this.id)"></button>
+<button id="b1" onclick="onClick(this.id)"></button>
+<button id="c1" onclick="onClick(this.id)"></button>
+<button id="a2" onclick="onClick(this.id)"></button>
+<button id="b2" onclick="onClick(this.id)"></button>
+<button id="c2" onclick="onClick(this.id)"></button>
+<button id="a3" onclick="onClick(this.id)"></button>
+<button id="b3" onclick="onClick(this.id)"></button>
+<button id="c3" onclick="onClick(this.id)"></button>
+</div>
+<button id="new" onclick="onClick(this.id)">New Game</button>
+</div>
+</body>
+</html>

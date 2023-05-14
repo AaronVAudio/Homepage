@@ -1,19 +1,50 @@
 <!--oh no, more sillies-->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>it is what it is</title>
-        <script type="text/javascript" src="y.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
-        <link href="y.css" rel="stylesheet" media="all">
-    </head>
-    <body>
-        <div id="main">
-            <button onclick="window.open('./x.html', '_self');" id="go">Go</button>
-            <p id="thing" style="color: yellow;" onclick="myClick(this.id)">Follow me...</p>
-            <button onclick="myClick(this.id)" id="butt">Click</button>
-        </div>
-    </body>
-</html>
+<head>
+<title>it is what it is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Unbounded', cursive;
+display: block;
+background: yellow;
+}
+#thing {
+margin-left: 45%;
+margin-top: 1%;
+transition: color, margin-top;
+transition-duration: 10s;
+}
+#butt {
+display: block;
+margin-left: 47.75%;
+}
+#go {
+display: none;
+margin-left: 48%;
+}
+</style>
+</head>
+<body>
+<script>
+function myClick(button) {
+if (button === "butt") {
+var x = document.getElementById("thing");
+if (x.style.color === "yellow" || x.style.color === "#ffff00") {
+x.style.color = "brown";
+} else {
+x.style.color = "yellow";
+}
+} else {
+document.getElementById("thing").style.marginTop = "100%";
+document.getElementById("go").style.display = "block";
+}
+}
+</script>
+<div id="main">
+<button onclick="window.open('./x.html', '_self');" id="go">Go</button>
+<p id="thing" style="color: yellow;" onclick="myClick(this.id)">follow me</p>
+<button onclick="myClick(this.id)" id="butt">Click</button>
+</div>
+</body>
