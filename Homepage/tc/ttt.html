@@ -50,12 +50,14 @@ var turn = "X";
 var win = false;
 var turns = 0;
 cheat = false;
+cheatP = false;
 
 function loadPage() {
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 if (urlParams.has("cheat")) {
 cheat = true;
+cheatP = true;
 document.getElementById("name").innerHTML = "Tic Tac Toe";
 }
 }
@@ -107,7 +109,9 @@ if (cheat && document.getElementById(button).innerHTML ==="") {
 turns = turns + 1;
 }
 document.getElementById(button).innerHTML = turn;
+if (!cheatP) {
 cheat = false;
+}
 document.getElementById("name").innerHTML = "TicTacToe";
 if (!cheat) {
 turns = turns + 1;
