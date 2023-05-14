@@ -61,6 +61,24 @@ document.getElementById("name").innerHTML = "Tic Tac Toe";
 }
 
 function onClick(button) {
+if (button === "status") {
+if (!cheat) {
+cheat = true;
+if (win) {
+if (turn === "X") {
+turn = "O";
+} else {
+turn = "X";
+}
+document.getElementById("status").innerHTML = turn;
+}
+win = false;
+document.getElementById("name").innerHTML = "Tic Tac Toe";
+} else {
+cheat = false;
+document.getElementById("name").innerHTML = "TicTacToe";
+}
+} else {
 var bgnum = Math.floor(Math.random()*16777215);
 var bg = bgnum.toString(16);
 var txt = (16777215 - bgnum).toString(16);
@@ -83,23 +101,6 @@ turns = 0;
 cheat = false;
 document.getElementById("name").innerHTML = "TicTacToe";
 document.getElementById("status").innerHTML = turn;
-} else if (button === "status") {
-if (!cheat) {
-cheat = true;
-if (win) {
-if (turn === "X") {
-turn = "O";
-} else {
-turn = "X";
-}
-document.getElementById("status").innerHTML = turn;
-}
-win = false;
-document.getElementById("name").innerHTML = "Tic Tac Toe";
-} else {
-cheat = false;
-document.getElementById("name").innerHTML = "TicTacToe";
-}
 } else if (!win) {
 if (document.getElementById(button).innerHTML === "" || cheat) {
 if (cheat && document.getElementById(button).innerHTML ==="") {
@@ -158,6 +159,7 @@ turn = "O";
 turn = "X";
 }
 document.getElementById("status").innerHTML = turn;
+}
 }
 }
 }
