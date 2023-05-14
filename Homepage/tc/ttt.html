@@ -86,6 +86,14 @@ document.getElementById("status").innerHTML = turn;
 } else if (button === "status") {
 if (!cheat) {
 cheat = true;
+if (win) {
+if (turn === "X") {
+turn = "O";
+} else {
+turn = "X";
+}
+document.getElementById("status").innerHTML = turn;
+}
 win = false;
 document.getElementById("name").innerHTML = "Tic Tac Toe";
 } else {
