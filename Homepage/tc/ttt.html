@@ -1,5 +1,6 @@
 <html>
 <head>
+<title id="name">TicTacToe</title>
 <style>
 html {
 width: 100%;
@@ -51,11 +52,12 @@ var turns = 0;
 cheat = false;
 
 function loadPage() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    if (urlParams.has("cheat")) {
-        cheat = true;
-    }
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+if (urlParams.has("cheat")) {
+cheat = true;
+document.getElementById("name").innerHTML = "Tic Tac Toe";
+}
 }
 
 function onClick(button) {
@@ -78,12 +80,17 @@ document.getElementById("c3").innerHTML = "";
 win = false;
 turn = "X";
 turns = 0;
+cheat = false;
+document.getElementById("name").innerHTML = "TicTacToe";
 document.getElementById("status").innerHTML = turn;
 } else if (button === "status") {
 if (!cheat) {
 cheat = true;
+win = false;
+document.getElementById("name").innerHTML = "Tic Tac Toe";
 } else {
 cheat = false;
+document.getElementById("name").innerHTML = "TicTacToe";
 }
 } else if (!win) {
 if (document.getElementById(button).innerHTML === "" || cheat) {
@@ -91,6 +98,8 @@ if (cheat && document.getElementById(button).innerHTML ==="") {
 turns = turns + 1;
 }
 document.getElementById(button).innerHTML = turn;
+cheat = false;
+document.getElementById("name").innerHTML = "TicTacToe";
 if (!cheat) {
 turns = turns + 1;
 }
