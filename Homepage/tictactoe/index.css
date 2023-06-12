@@ -1,0 +1,42 @@
+html {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px black;
+}
+body {
+    background: orange;
+    color: black;
+    transition: background, color;
+    transition-duration: 0.5s;
+}
+#main {
+    width: 540px;
+    height: 600px;
+    margin: auto;
+}
+#buttons {
+    padding-top: 0;
+    margin-top: 0;
+    width: 540px;
+    height: 540px;
+    display: grid;
+    grid-template-rows: repeat(3, 180px);
+    grid-template-columns: repeat(3, 180px);
+}
+#new {
+    font-family: sans-serif;
+    width: 540px;
+    height: 60px;
+    background: lightblue;
+}
+#a1, #a2, #a3, #b1, #b2, #b3, #c1, #c2, #c3 {
+    background: lightblue;
+    font-family: sans-serif;
+    font-size: 72;
+}
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
