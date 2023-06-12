@@ -1,0 +1,32 @@
+<!--designed for Trophy Case terminals at The Rec Room, may look wrong at other resolutions-->
+<html>
+    <div id="overlay">
+        <div id="image1"></div>
+        <div id="image2"></div>
+        <div id="image3"></div>
+    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="index.js"></script>
+        <link href="index.css" rel="stylesheet" media="all">
+        <title>Remove Tax</title>
+    </head>
+    <body onload="onLoad()">
+        <div id="container" onclick="document.getElementById('image2').style = 'animation: bounce 0.8s normal ease-in-out';">
+            <div id="main">
+                <img src="trr.png" />
+                <br></br>
+                <h1>Tax Remover</h1>
+                <h3>Amount With Tax:</h3>
+                <textarea placeholder="0" id="input" onkeyup="myPress()"></textarea>
+                <h2 id="output1">With Tax:&nbsp&nbsp&nbsp$0.00</h2>
+                <h2 id="output2">Tax:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$0.00</h2>
+                <h2 id="output3">Before Tax:&nbsp$0.00</h2>
+            </div>
+        </div>
+    </body>
+    <div class="footer">
+        <p>Made by <a href="http://www.avdev.ca">Aaron</a></p>
+    </div>
+</html>
