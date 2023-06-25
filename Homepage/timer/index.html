@@ -1,4 +1,5 @@
 <html>
+    <div id="overlay"></div>
     <head>
         <title>Ping Pong Timer</title>
         <script type="text/javascript" src="index.js"></script>
@@ -8,25 +9,27 @@
         <link href="index.css" rel="stylesheet" media="all">
     </head>
     <body>
-        <div id="main">
-            <div id="head">
-                <img src="./catpong.gif" />
-                <h1>Ping Pong</h1>
-            </div>
-            <div class="tables">
-                <div class="table">
-                    <h2>Table A:</h2>
-                    <h3><span id="timeA">30:00</span> remaining!</h3>
-                    <h3 id="statusA">Available!</h3>
-                    <button onclick="stopTimer(this.id)" id="stopA" class="stop">Stop/Reset!</button>
-                    <button onclick="startClick(this.id)" id="startA" class="start">Start!</button>
+        <div id="container">
+            <div id="main">
+                <div id="head">
+                    <img src="./catpong.gif" />
+                    <h1>Ping Pong</h1>
                 </div>
-                <div class="table">
-                    <h2>Table B:</h2>
-                    <h3><span id="timeB">30:00</span> remaining!</h3>
-                    <h3 id="statusB">Available!</h3>
-                    <button onclick="stopTimer(this.id)" id="stopB" class="stop">Stop/Reset!</button>
-                    <button onclick="startClick(this.id)" id="startB" class="start">Start!</button>
+                <div class="tables">
+                    <div class="table">
+                        <h2 id="tabA">Table A:</h2>
+                        <h3><span id="timeA">30:00</span> remaining!</h3>
+                        <h3 id="statusA">Available!</h3>
+                        <button onclick="stopTimer(this.id)" id="stopA" class="stop">Stop/Reset!</button>
+                        <button onclick="startClick(this.id)" id="startA" class="start">Start!</button>
+                    </div>
+                    <div class="table">
+                        <h2 id="tabB">Table B:</h2>
+                        <h3><span id="timeB">30:00</span> remaining!</h3>
+                        <h3 id="statusB">Available!</h3>
+                        <button onclick="stopTimer(this.id)" id="stopB" class="stop">Stop/Reset!</button>
+                        <button onclick="startClick(this.id)" id="startB" class="start">Start!</button>
+                    </div>
                 </div>
             </div>
         </div>

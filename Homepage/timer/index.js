@@ -2,8 +2,11 @@ var countdownA, countdownB, time, displayA, displayB, countingA, countingB;
 
 function startTimer(endTime, display) {
     if (display.id === "timeA") {
+        document.getElementById("tabA").style.textShadow = "0px 0px 10px lightblue";
+        document.getElementById("tabA").style.color = "lightblue";
         countingA = true;
         var minutesA, secondsA;
+
         countdownA = setInterval(function () {
             var currentTime = new Date();
             if (currentTime < endTime) {
@@ -32,8 +35,11 @@ function startTimer(endTime, display) {
             }
         }, 1000);
     } else if (display.id === "timeB") {
+        document.getElementById("tabB").style.textShadow = "0px 0px 10px lightblue";
+        document.getElementById("tabB").style.color = "lightblue";
         countingB = true;
         var minutesB, secondsB;
+
         countdownB = setInterval(function () {
             var currentTime = new Date();
             if (currentTime < endTime) {
@@ -66,11 +72,15 @@ function startTimer(endTime, display) {
 
 function stopTimer(button) {
     if (button === "stopA") {
+        document.getElementById("tabA").style.textShadow = "none";
+        document.getElementById("tabA").style.color = "grey";
         displayA.textContent = "30:00";
         document.getElementById("statusA").textContent = "Available!";
         clearInterval(countdownA);
         countingA = false;
     } else if (button === "stopB") {
+        document.getElementById("tabB").style.textShadow = "none";
+        document.getElementById("tabB").style.color = "grey";
         displayB.textContent = "30:00";
         document.getElementById("statusB").textContent = "Available!";
         clearInterval(countdownB);
