@@ -1,0 +1,11 @@
+body {
+    background: #7F337F;
+    color: yellow;
+    transition: background;
+    transition-duration: 1s;
+}
+#blob {
+    margin: auto;
+    margin-top: 20%;
+    text-align: center;
+}
