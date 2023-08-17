@@ -6,7 +6,6 @@ function startTimer(endTime, display) {
         document.getElementById("tabA").style.color = "lightblue";
         countingA = true;
         var minutesA, secondsA;
-
         countdownA = setInterval(function () {
             var currentTime = new Date();
             if (currentTime < endTime) {
@@ -39,7 +38,6 @@ function startTimer(endTime, display) {
         document.getElementById("tabB").style.color = "lightblue";
         countingB = true;
         var minutesB, secondsB;
-
         countdownB = setInterval(function () {
             var currentTime = new Date();
             if (currentTime < endTime) {
@@ -76,6 +74,10 @@ function stopTimer(button) {
         document.getElementById("tabA").style.color = "grey";
         displayA.textContent = "30:00";
         document.getElementById("statusA").textContent = "Available!";
+        document.getElementById("startA").style.transform = "translateY(-3px)";
+        document.getElementById("startA").style.boxShadow = "0px 3px 0px black";
+        document.getElementById("stopA").style.transform = "translateY(0px)";
+        document.getElementById("stopA").style.boxShadow = "0px 0px 0px black";
         clearInterval(countdownA);
         countingA = false;
     } else if (button === "stopB") {
@@ -83,6 +85,10 @@ function stopTimer(button) {
         document.getElementById("tabB").style.color = "grey";
         displayB.textContent = "30:00";
         document.getElementById("statusB").textContent = "Available!";
+        document.getElementById("startB").style.transform = "translateY(-3px)";
+        document.getElementById("startB").style.boxShadow = "0px 3px 0px black";
+        document.getElementById("stopB").style.transform = "translateY(0px)";
+        document.getElementById("stopB").style.boxShadow = "0px 0px 0px black";
         clearInterval(countdownB);
         countingB = false;
     }
@@ -105,9 +111,17 @@ function startClick(button) {
     }
     if (button === "startA" && !countingA) {
         startTimer(done, displayA);
+        document.getElementById("startA").style.transform = "translateY(0px)";
+        document.getElementById("startA").style.boxShadow = "0px 0px 0px black";
+        document.getElementById("stopA").style.transform = "translateY(-3px)";
+        document.getElementById("stopA").style.boxShadow = "0px 3px 0px black";
         document.getElementById("statusA").textContent = "Finished at " + doneTime;
     } else if (button === "startB" && !countingB) {
         startTimer(done, displayB);
+        document.getElementById("startB").style.transform = "translateY(0px)";
+        document.getElementById("startB").style.boxShadow = "0px 0px 0px black";
+        document.getElementById("stopB").style.transform = "translateY(-3px)";
+        document.getElementById("stopB").style.boxShadow = "0px 3px 0px black";
         document.getElementById("statusB").textContent = "Finished at " + doneTime;
     }
 }
